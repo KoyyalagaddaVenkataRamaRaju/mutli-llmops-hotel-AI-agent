@@ -1,0 +1,16 @@
+langchain
+langchain-tavily
+langchain-groq
+langchain-community
+python-dotenv
+uvicorn
+fastapi
+pydantic
+streamlit
+langgraph
+langchain-core
+pandas
+pinecone
+langchain-pinecone
+plotly
+

@@ -1,0 +1,2 @@
+# Frontend management panels package
+
