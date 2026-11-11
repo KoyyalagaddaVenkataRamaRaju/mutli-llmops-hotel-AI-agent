@@ -171,10 +171,27 @@ TAVILY_API_KEY=tvly-your_tavily_api_key_here
 ```
 
 ### 4. Launch Application Stack
+
+#### Option A: Direct Local Execution
 Run the unified entry point which starts both the FastAPI backend and Streamlit UI:
 ```bash
 python app/main.py
 ```
+
+#### Option B: Docker Container Deployment
+Run with Docker Compose (Recommended):
+```bash
+docker compose up --build
+```
+Or build and run standalone container:
+```bash
+# Build the Docker image
+docker build -t stayease-ai-os .
+
+# Run the container with environment file and exposed ports
+docker run -d -p 8501:8501 -p 8000:8000 --env-file .env --name stayease stayease-ai-os
+```
+
 - **Streamlit Web UI**: [`http://localhost:8501`](http://localhost:8501)
 - **FastAPI Backend**: [`http://127.0.0.1:8000`](http://127.0.0.1:8000)
 - **Interactive Swagger Docs**: [`http://127.0.0.1:8000/docs`](http://127.0.0.1:8000/docs)

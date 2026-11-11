@@ -13,4 +13,5 @@ pandas
 pinecone
 langchain-pinecone
 plotly
+requests
 

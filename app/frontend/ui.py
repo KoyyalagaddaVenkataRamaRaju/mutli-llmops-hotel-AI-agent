@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 import streamlit as st
 import requests
@@ -20,7 +21,7 @@ from app.frontend.panels.room_service import render_room_service_panel
 from app.frontend.panels.owner_analytics import render_owner_analytics_panel
 from app.frontend.panels.vector_db_panel import render_vector_db_panel
 
-BACKEND_URL = "http://127.0.0.1:8000"
+BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
 
 # 1. Page Configuration
 st.set_page_config(

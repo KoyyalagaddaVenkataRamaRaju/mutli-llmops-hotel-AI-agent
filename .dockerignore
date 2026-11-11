@@ -1,0 +1,41 @@
+# Virtual Environments & Packages
+venv/
+.venv/
+env/
+MULTI_LLMOPS.egg-info/
+build/
+dist/
+*.egg-info/
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Git & Antigravity Metadata
+.git/
+.gitignore
+.gitattributes
+.system_generated/
+.gemini/
+
+# Environment Variables & Secrets (pass via docker run -e or docker-compose)
+.env
+.env.*
+!.env.example
+
+# Local Logs & IDE Configurations
+logs/
+*.log
+.vscode/
+.idea/
+.cursor/
+
+# Temporary & Test Scripts
+check_*.py
+test_*.py
+scratch/
+

@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: custom_jenkins_dind
+    restart: unless-stopped
+    privileged: true
+    user: root
+    ports:
+      - "8080:8080"   # Jenkins Web UI
+      - "50000:50000" # Jenkins Agent Port
+    volumes:
+      # Persistent storage for Jenkins pipelines, jobs, and workspace
+      - jenkins_home:/var/jenkins_home
+      # Mount host docker socket to enable Docker-in-Docker / Docker-outside-of-Docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DOCKER_HOST=unix:///var/run/docker.sock
+
+volumes:
+  jenkins_home:
+    name: jenkins_home_data
+
